@@ -13,6 +13,7 @@
       line-height: 1.5;
       background-color: #f5f5f5;
       font-size: 12pt;
+      position: relative;
     }
     .container {
       display: grid;
@@ -23,6 +24,19 @@
       background-color: #fdfdfd;
       padding: 40px;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .issue-badge {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 12px;
+      color: #555;
+      border: 1px solid #ccc;
+      padding: 4px 8px;
+      border-radius: 12px;
+      background-color: #fafafa;
+      font-weight: bold;
     }
     .left .header {
       text-align: left;
@@ -68,10 +82,50 @@
       padding: 8px;
       text-align: left;
     }
+    .back-button {
+      position: fixed;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+    .back-button:hover {
+      background-color: #ddd;
+      border-color: #888;
+      color: #000;
+    }
+    footer {
+      max-width: 1000px;
+      margin: 40px auto;
+      text-align: center;
+      font-size: 10pt;
+      color: #555;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+    }
   </style>
 </head>
 <body>
+
+  <!-- 뒤로가기 버튼 -->
+  <div class="back-button" onclick="history.back()">&#8592;</div>
+
   <div class="container">
+
+    <!-- 6월호 표시 -->
+    <div class="issue-badge">6월호</div>
+
     <div class="left">
       <div class="header">2025/06/02</div>
       <img src="1.jpg" alt="1">
@@ -116,5 +170,12 @@
       <p>이제 영화 포스터는 단순한 홍보물 그 이상이다. 디자인, 문화, 소비자 심리가 모두 결합된 하나의 전략물이다. 한국판의 자극은 결코 과한 것이 아니라, 플랫폼과 관객 심리에 최적화된 결과물일지도 모른다. 그러나 우리는 종종 묻는다. “이 포스터는 영화를 보여주고 있는가, 아니면 클릭을 유도하고 있는가?”</p>
     </div>
   </div>
+
+  <!-- 푸터 -->
+  <footer>
+    출처: KBS 뉴스, GOOGLE 뉴스, GOOGLE 이미지
+  </footer>
+
 </body>
 </html>
+
